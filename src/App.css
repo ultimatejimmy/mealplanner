@@ -1,25 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 html,
 body,
 #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: system-ui;
+  font-family: 'Poppins', sans-serif;
   font-weight: 200;
-  color: #3e5869;
+  color: #fff;
 }
 #app {
   display: grid;
   height: 100%;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas: "week t t t s s" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list";
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas: "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "week m m m list list" "add  m m m list list";
 }
 #app #weekList {
   grid-area: week;
   background-color: #808080;
+  overflow: auto;
+}
+#app #weekList ul,
+#app #weekList li {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+#app #weekList ul {
+  margin: 0;
+  padding: 0;
+}
+#app #weekList ul li {
+  padding: 10px 20px;
+  background-color: #6495ed;
+  list-style: none;
+  cursor: pointer;
 }
 #app #shoppingList {
   grid-area: list;
-  background-color: #d3d3d3;
+  background-color: #add8e6;
+}
+#app #addWeek {
+  grid-area: add;
+  background-color: #008000;
+  padding: 20px;
+}
+#app #addWeek input,
+#app #addWeek button {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+}
+#app #addWeek input {
+  max-width: 80%;
+}
+#app #recipeList {
+  grid-area: m;
+  background-color: #000;
+  padding: 20px 50px;
 }

@@ -1,25 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 html, body, #root
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: system-ui;
+	font-family: 'Poppins', sans-serif
 	font-weight: 200
-	color #3e5869
+	color white
 
 #app
 	display grid
 	height 100%
-	grid-template-columns: repeat(6, 1fr);repeat(6, 1fr);
-	grid-template-rows: repeat(6, 1fr);
-	grid-template-areas: "week t t t s s"\
-					 "week m m m list list"\
-					 "week m m m list list"\
-					 "week m m m list list"\
-					 "week m m m list list"\
-					 "week m m m list list";
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	grid-template-areas: 	"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"week m m m list list"\
+							"add  m m m list list";
 	#weekList
 		grid-area week
 		background-color grey
+		overflow auto
+		ul, li
+			list-style-type: none;
+			list-style-position:inside;
+			margin:0;
+			padding:0
+		ul
+			margin 0
+			padding 0
+			li
+				padding 10px 20px
+				background-color cornflowerblue
+				list-style none
+				cursor pointer
 	#shoppingList
 		grid-area list
-		background-color lightgray
+		background-color lightblue
+	#addWeek
+		grid-area add
+		background-color green
+		padding 20px
+		input, button
+			font-size 18px
+			font-family 'Poppins', sans-serif
+		input
+			max-width 80%
+	#recipeList
+		grid-area m
+		background-color black
+		padding 20px 50px

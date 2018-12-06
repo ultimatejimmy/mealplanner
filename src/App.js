@@ -14,10 +14,8 @@ class App extends React.Component {
 			weeks: [],
 			currentWeek: ''
 		}
-
 		this.createWeek = this.createWeek.bind(this)
 		this.setCurrentWeek = this.setCurrentWeek.bind(this)
-
 	}
 	setCurrentWeek(week){
 		this.setState({
@@ -26,7 +24,16 @@ class App extends React.Component {
 	}
 	createWeek(theWeek){
 		const week = {
-			name: theWeek
+			name: theWeek,
+			recipes: [{
+				title: "Test 1",
+				ingredients: [{
+					thing: "water",
+					unit: "cup", 
+					amount: 1
+				}],
+				instructions: "Drink up!"
+			}]
 		}
 		this.setState({
 			weeks: [week, ...this.state.weeks]
@@ -39,7 +46,7 @@ class App extends React.Component {
 			<SimpleStorage parent={this}/>
 			<WeekList weeks={this.state.weeks} setCurrentWeek={this.setCurrentWeek}/>
 			<AddWeek createWeek={this.createWeek} />
-			<RecipeList recipes={this.state.weeks} currentWeek={this.state.currentWeek}/>
+			<RecipeList weeks={this.state.weeks} currentWeek={this.state.currentWeek}/>
 			<ShoppingList/>
 		</div>
 		);

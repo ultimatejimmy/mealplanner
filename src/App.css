@@ -38,6 +38,9 @@ body,
   list-style: none;
   cursor: pointer;
 }
+#app #weekList ul li.active {
+  background-color: #000;
+}
 #app #shoppingList {
   grid-area: list;
   background-color: #add8e6;

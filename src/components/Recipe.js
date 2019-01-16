@@ -31,6 +31,8 @@ export default class Recipe extends React.Component {
 					paramName="directions"
 					change={this.dataChanged}
 					staticElement="p"
+					editingElement="textarea"
+					editing="true"
 				/>
 				<h3>Recipe Source</h3>
 				<InlineEdit

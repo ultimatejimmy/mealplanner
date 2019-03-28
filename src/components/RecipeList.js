@@ -6,7 +6,7 @@ class RecipeList extends React.Component {
 		const weeks = this.props.weeks;
 		// console.log(weeks);
 		let currentWeek = weeks.find(
-			week => week.name == this.props.currentWeek
+			week => week.name === this.props.currentWeek
 		);
 		currentWeek = { ...currentWeek };
 		let currentRecipes = [currentWeek.recipes];

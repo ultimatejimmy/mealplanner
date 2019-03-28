@@ -5,9 +5,10 @@ export default class Recipe extends React.Component {
 	constructor(props) {
 		super();
 		this.state = {
-			name: "Add recipe title",
-			directions: "Add recipe directions here.",
-			source: "Add recipe source URL"
+			name: "",
+			directions: "",
+			source: "",
+			ingredients: []
 		};
 		this.dataChanged = this.dataChanged.bind(this);
 	}
@@ -32,7 +33,6 @@ export default class Recipe extends React.Component {
 					change={this.dataChanged}
 					staticElement="p"
 					editingElement="textarea"
-					editing="true"
 				/>
 				<h3>Recipe Source</h3>
 				<InlineEdit

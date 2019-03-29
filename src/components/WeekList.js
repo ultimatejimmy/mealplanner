@@ -1,43 +1,36 @@
-import React from 'react';
+import React from "react";
+import { getQueryVariable } from "../utility";
 
 class WeekList extends React.Component {
 	constructor(props) {
-		super()
+		super();
 		this.state = {
-			currentItem:''
-		}
-		this.setCurrentWeek = this.setCurrentWeek.bind(this)
+			currentWeek: getQueryVariable("week")
+		};
+		this.setCurrentWeek = this.setCurrentWeek.bind(this);
 	}
 	setCurrentWeek(week, index) {
 		this.setState({
-			currentItem: index
-		})
+			currentWeek: index
+		});
 		this.props.setCurrentWeek(week);
 	}
-	render() { 
+	render() {
 		const weeks = this.props.weeks;
-		
+
 		const showWeeks = weeks.map((week, index) => {
 			return (
-				<li 
-					onClick={() => {
-						this.setCurrentWeek(week.name, index);
-					}} 
-					className={ this.state.currentItem === index ? 'active' : ''}
-					key={week.name}
-				>
-					{week.name}
+				<li key={week.name}>
+					<a href={"?week=" + week.name}>{week.name}</a>
 				</li>
-			)
+			);
 		});
-        return ( 
-            <div id="weekList">
-                <ul>
-					{showWeeks}
-				</ul>
-            </div>
-         );
-    }
+		return (
+			<div id="weekList">
+				<ul>{showWeeks}</ul>
+			</div>
+		);
+	}
 }
 
 export default WeekList;

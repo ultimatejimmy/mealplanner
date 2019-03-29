@@ -13,7 +13,8 @@ class App extends React.Component {
 
 		this.state = {
 			weeks: [],
-			currentWeek: ""
+			recipes: [],
+			ingredients: []
 		};
 		this.createWeek = this.createWeek.bind(this);
 		// this.createRecipe = this.createRecipe.bind(this);

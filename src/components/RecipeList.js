@@ -1,7 +1,14 @@
 import React from "react";
 import Recipe from "./Recipe";
+import { getQueryVariable } from "../utility";
 
 class RecipeList extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isAuthor: getQueryVariable("author")
+		};
+	}
 	render() {
 		const weeks = this.props.weeks;
 		// console.log(weeks);
